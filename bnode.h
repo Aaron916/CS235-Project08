@@ -21,7 +21,7 @@ public:
 template<class T>
 void addLeft(BNode<T>* pNode, const T& t)
 {
-	try 
+	try
 	{
 		BNode<T>* pAdd = new BNode<T>(t);
 		pAdd->pParent = pNode;
@@ -98,7 +98,7 @@ void deleteBTree(BNode<T>* & node)
 	{
 		return;
 	}
-	
+
 	deleteBTree(node->pLeft);
 	deleteBTree(node->pRight);
 	delete node;
@@ -124,7 +124,7 @@ BNode<T>* copyBTree(const BNode<T>* source)
 	{
 		destination->pRight->pParent = destination;
 	}
-	
+
 	return destination;
 }
 
@@ -132,16 +132,21 @@ template <class T>
 std::ostream& operator << (std::ostream& out, const BNode <T>* pHead)
 {
 	// paranoia
-	if (pHead == NULL)
-		return out;
+	if (pHead->pLeft != NULL)
+	{
+		out << pHead->pLeft;
+	}
 
-	if (pHead->pLeft)
-		return (out << " " << pHead->pLeft);
-	
-	out << " " << pHead->data;
-	
-	if (pHead->pRight)
-		return (out << " " << pHead->pRight);
+	// Get Parent
+	out << pHead->data << " ";
+
+	// Then Right
+	if (pHead->pRight != NULL)
+	{
+		out << pHead->pRight;
+	}
+
+	return out;
 }
 
 
