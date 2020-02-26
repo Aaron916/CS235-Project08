@@ -131,16 +131,16 @@ BNode<T>* copyBTree(const BNode<T>* source)
 template <class T>
 std::ostream& operator << (std::ostream& out, const BNode <T>* pHead)
 {
-	// paranoia
+	// Left First
 	if (pHead->pLeft != NULL)
 	{
 		out << pHead->pLeft;
 	}
 
-	// Get Parent
+	// Parent
 	out << pHead->data << " ";
 
-	// Then Right
+	// Right Last
 	if (pHead->pRight != NULL)
 	{
 		out << pHead->pRight;
