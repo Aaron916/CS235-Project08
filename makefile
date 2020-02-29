@@ -13,7 +13,7 @@
 ##############################################################
 # The main rule
 ##############################################################
-a.out: assignment08.o huffman.o 
+a.out: vector.h assignment08.o huffman.o 
 	g++ -o a.out assignment08.o huffman.o -g
 	tar -cf assignment08.tar *.h *.cpp makefile
 
@@ -25,6 +25,6 @@ a.out: assignment08.o huffman.o
 assignment08.o: bnode.h huffman.h assignment08.cpp
 	g++ -c assignment08.cpp -g
 
-huffman.o: bnode.h huffman.h huffman.cpp
+huffman.o: bnode.h huffman.h vector.h huffman.cpp
 	g++ -c huffman.cpp -g
 
