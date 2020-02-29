@@ -102,6 +102,7 @@ void deleteBTree(BNode<T>* & node)
 	deleteBTree(node->pLeft);
 	deleteBTree(node->pRight);
 	delete node;
+	node = NULL;
 }
 
 template<class T>
@@ -111,7 +112,16 @@ BNode<T>* copyBTree(const BNode<T>* source)
 	{
 		return NULL;
 	}
-	BNode<T>* destination = new BNode<T>(source->data);
+	BNode<T>* destination;
+
+	try
+	{
+		destination = new BNode<T>(source->data);
+	}
+	catch (...)
+	{
+		throw "ERROR: Unable to allocate a node";
+	}
 
 	destination->pLeft = copyBTree(source->pLeft);
 	if (destination->pLeft != NULL)
