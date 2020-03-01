@@ -5,9 +5,13 @@
 # Author:
 #     Adam Goff, Aaron Rook, Martin Melerio, Tanner Stratford
 # Summary:
-#     <put a description here>
+#     This is our partially working assignment. BNode works
+#     but our huffman code doesn't work.
+#
+#     Most difficult part of the assignment was the huffman
+#     code. We don't know how to do it.
 # Time:
-#     <how long did it take to complete this program>?
+#     Completion time in hours: about 8 hours.
 ###############################################################
 
 ##############################################################
